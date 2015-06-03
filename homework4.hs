@@ -54,7 +54,7 @@ xor :: [Bool] -> Bool
 xor = odd . foldl (\acc x -> if x == True then (acc + 1) else acc) 0
 
 map' :: (a -> b) -> [a] -> [b]
-map' f = foldr (\acc _ -> [f acc]) []
+map' f = foldr (\acc x -> (f acc):x) []
 
 sieveSundaram :: Integer -> [Integer]
 sieveSundaram = primes
